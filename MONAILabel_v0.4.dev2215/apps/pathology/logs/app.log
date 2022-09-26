@@ -1,0 +1,502 @@
+[2022-07-12 12:39:47,532] [1905] [MainThread] [INFO] (monailabel.interfaces.utils.app:38) - Initializing App from: /workshop/src/MONAILabel_v0.4.dev2215/apps/pathology; studies: /workshop/src/MONAILabel_v0.4.dev2215/sample_wsi; conf: {}
+[2022-07-12 12:39:47,540] [1905] [MainThread] [INFO] (monailabel.utils.others.class_utils:36) - Subclass for MONAILabelApp Found: <class 'main.MyApp'>
+[2022-07-12 16:17:31,003] [1226] [MainThread] [INFO] (monailabel.interfaces.utils.app:38) - Initializing App from: /workshop/src/MONAI_Workshop_202205/MONAILabel_v0.4.dev2215/apps/pathology; studies: /workshop/src/MONAI_Workshop_202205/MONAILabel_v0.4.dev2215/sample_wsi; conf: {}
+[2022-07-12 16:17:31,004] [1226] [MainThread] [INFO] (monailabel.utils.others.class_utils:36) - Subclass for MONAILabelApp Found: <class 'main.MyApp'>
+[2022-07-12 16:17:31,031] [1226] [MainThread] [INFO] (monailabel.utils.others.class_utils:36) - Subclass for TaskConfig Found: <class 'lib.configs.segmentation_nuclei.SegmentationNuclei'>
+[2022-07-12 16:17:31,032] [1226] [MainThread] [INFO] (monailabel.utils.others.class_utils:36) - Subclass for TaskConfig Found: <class 'lib.configs.deepedit_nuclei.DeepEditNuclei'>
+[2022-07-12 16:17:31,033] [1226] [MainThread] [INFO] (monailabel.utils.others.class_utils:36) - Subclass for TaskConfig Found: <class 'lib.configs.nuclick.NuClick'>
+[2022-07-12 16:17:31,033] [1226] [MainThread] [INFO] (main:77) - +++ Adding Model: deepedit_nuclei => lib.configs.deepedit_nuclei.DeepEditNuclei
+[2022-07-12 16:17:31,034] [1226] [MainThread] [INFO] (monailabel.utils.others.generic:171) - Downloading resource: /workshop/src/MONAI_Workshop_202205/MONAILabel_v0.4.dev2215/apps/pathology/model/pretrained_deepedit_nuclei.pt from https://github.com/Project-MONAI/MONAILabel/releases/download/data/pathology_deepedit_nuclei.pt
+[2022-07-12 16:17:34,753] [1226] [MainThread] [INFO] (main:77) - +++ Adding Model: nuclick => lib.configs.nuclick.NuClick
+[2022-07-12 16:17:34,753] [1226] [MainThread] [INFO] (monailabel.utils.others.generic:171) - Downloading resource: /workshop/src/MONAI_Workshop_202205/MONAILabel_v0.4.dev2215/apps/pathology/model/pretrained_nuclick.pt from https://github.com/Project-MONAI/MONAILabel/releases/download/data/pathology_nuclick_bunet.pt
+[2022-07-12 16:17:38,429] [1226] [MainThread] [INFO] (main:77) - +++ Adding Model: segmentation_nuclei => lib.configs.segmentation_nuclei.SegmentationNuclei
+[2022-07-12 16:17:38,430] [1226] [MainThread] [INFO] (monailabel.utils.others.generic:171) - Downloading resource: /workshop/src/MONAI_Workshop_202205/MONAILabel_v0.4.dev2215/apps/pathology/model/pretrained_segmentation_nuclei.pt from https://github.com/Project-MONAI/MONAILabel/releases/download/data/pathology_segmentation_nuclei.pt
+[2022-07-12 16:17:44,969] [1226] [MainThread] [INFO] (main:81) - +++ Using Models: ['deepedit_nuclei', 'nuclick', 'segmentation_nuclei']
+[2022-07-12 16:17:44,969] [1226] [MainThread] [INFO] (monailabel.interfaces.app:128) - Init Datastore for: /workshop/src/MONAI_Workshop_202205/MONAILabel_v0.4.dev2215/sample_wsi
+[2022-07-12 16:17:44,971] [1226] [MainThread] [INFO] (monailabel.datastore.local:125) - Auto Reload: True; Extensions: ['*.nii.gz', '*.nii', '*.nrrd', '*.jpg', '*.png', '*.tif', '*.svs', '*.xml']
+[2022-07-12 16:17:44,974] [1226] [MainThread] [INFO] (monailabel.datastore.local:540) - Invalidate count: 0
+[2022-07-12 16:17:44,974] [1226] [MainThread] [INFO] (monailabel.datastore.local:145) - Start observing external modifications on datastore (AUTO RELOAD)
+[2022-07-12 16:17:44,975] [1226] [MainThread] [INFO] (lib.configs.deepedit_nuclei:60) - Using Preload: 0; ROI Size: [1024, 1024]
+[2022-07-12 16:17:44,976] [1226] [MainThread] [INFO] (main:122) - +++ Adding Inferer:: deepedit_nuclei => <lib.infers.deepedit_nuclei.DeepEditNuclei object at 0x7f0147cf25e0>
+[2022-07-12 16:17:44,976] [1226] [MainThread] [INFO] (main:122) - +++ Adding Inferer:: nuclick => <lib.infers.nuclick.NuClick object at 0x7f0147f9e370>
+[2022-07-12 16:17:44,976] [1226] [MainThread] [INFO] (lib.configs.segmentation_nuclei:72) - Using Preload: 0; ROI Size: [1024, 1024]
+[2022-07-12 16:17:44,976] [1226] [MainThread] [INFO] (main:122) - +++ Adding Inferer:: segmentation_nuclei => <lib.infers.segmentation_nuclei.SegmentationNuclei object at 0x7f01202482e0>
+[2022-07-12 16:17:44,976] [1226] [MainThread] [INFO] (main:136) - +++ Adding Trainer:: deepedit_nuclei => <lib.trainers.deepedit_nuclei.DeepEditNuclei object at 0x7f01202483d0>
+[2022-07-12 16:17:44,976] [1226] [MainThread] [INFO] (main:136) - +++ Adding Trainer:: nuclick => <lib.trainers.nuclick.NuClick object at 0x7f0120248430>
+[2022-07-12 16:17:44,977] [1226] [MainThread] [INFO] (main:136) - +++ Adding Trainer:: segmentation_nuclei => <lib.trainers.segmentation_nuclei.SegmentationNuclei object at 0x7f01202483a0>
+[2022-07-12 16:17:44,977] [1226] [MainThread] [INFO] (monailabel.utils.sessions:51) - Session Path: /root/.cache/monailabel/sessions
+[2022-07-12 16:17:44,977] [1226] [MainThread] [INFO] (monailabel.utils.sessions:52) - Session Expiry (max): 3600
+[2022-07-12 16:17:44,977] [1226] [MainThread] [INFO] (monailabel.interfaces.app:460) - App Init - completed
+[2022-07-12 16:17:44,977] [1226] [MainThread] [INFO] (timeloop:60) - Starting Timeloop..
+[2022-07-12 16:17:44,978] [1226] [MainThread] [INFO] (timeloop:42) - Registered job <function MONAILabelApp.on_init_complete.<locals>.run_scheduler at 0x7f0120242a60>
+[2022-07-12 16:17:44,978] [1226] [MainThread] [INFO] (timeloop:63) - Timeloop now started. Jobs will run based on the interval set
+[2022-07-12 16:29:46,288] [1294] [MainThread] [INFO] (monailabel.interfaces.utils.app:38) - Initializing App from: /workshop/src/MONAI_Workshop_202205/MONAILabel_v0.4.dev2215/apps/pathology; studies: /workshop/src/MONAI_Workshop_202205/MONAILabel_v0.4.dev2215/sample_wsi; conf: {}
+[2022-07-12 16:29:46,290] [1294] [MainThread] [INFO] (monailabel.utils.others.class_utils:36) - Subclass for MONAILabelApp Found: <class 'main.MyApp'>
+[2022-07-12 16:29:46,304] [1294] [MainThread] [INFO] (monailabel.utils.others.class_utils:36) - Subclass for TaskConfig Found: <class 'lib.configs.segmentation_nuclei.SegmentationNuclei'>
+[2022-07-12 16:29:46,305] [1294] [MainThread] [INFO] (monailabel.utils.others.class_utils:36) - Subclass for TaskConfig Found: <class 'lib.configs.deepedit_nuclei.DeepEditNuclei'>
+[2022-07-12 16:29:46,305] [1294] [MainThread] [INFO] (monailabel.utils.others.class_utils:36) - Subclass for TaskConfig Found: <class 'lib.configs.nuclick.NuClick'>
+[2022-07-12 16:29:46,305] [1294] [MainThread] [INFO] (main:77) - +++ Adding Model: deepedit_nuclei => lib.configs.deepedit_nuclei.DeepEditNuclei
+[2022-07-12 16:29:46,422] [1294] [MainThread] [INFO] (main:77) - +++ Adding Model: nuclick => lib.configs.nuclick.NuClick
+[2022-07-12 16:29:46,519] [1294] [MainThread] [INFO] (main:77) - +++ Adding Model: segmentation_nuclei => lib.configs.segmentation_nuclei.SegmentationNuclei
+[2022-07-12 16:29:46,615] [1294] [MainThread] [INFO] (main:81) - +++ Using Models: ['deepedit_nuclei', 'nuclick', 'segmentation_nuclei']
+[2022-07-12 16:29:46,615] [1294] [MainThread] [INFO] (monailabel.interfaces.app:128) - Init Datastore for: /workshop/src/MONAI_Workshop_202205/MONAILabel_v0.4.dev2215/sample_wsi
+[2022-07-12 16:29:46,615] [1294] [MainThread] [INFO] (monailabel.datastore.local:125) - Auto Reload: True; Extensions: ['*.nii.gz', '*.nii', '*.nrrd', '*.jpg', '*.png', '*.tif', '*.svs', '*.xml']
+[2022-07-12 16:29:46,617] [1294] [MainThread] [INFO] (monailabel.datastore.local:540) - Invalidate count: 0
+[2022-07-12 16:29:46,617] [1294] [MainThread] [INFO] (monailabel.datastore.local:145) - Start observing external modifications on datastore (AUTO RELOAD)
+[2022-07-12 16:29:46,619] [1294] [MainThread] [INFO] (lib.configs.deepedit_nuclei:60) - Using Preload: 0; ROI Size: [1024, 1024]
+[2022-07-12 16:29:46,619] [1294] [MainThread] [INFO] (main:122) - +++ Adding Inferer:: deepedit_nuclei => <lib.infers.deepedit_nuclei.DeepEditNuclei object at 0x7f8a9be0ab80>
+[2022-07-12 16:29:46,619] [1294] [MainThread] [INFO] (main:122) - +++ Adding Inferer:: nuclick => <lib.infers.nuclick.NuClick object at 0x7f8a9c0354c0>
+[2022-07-12 16:29:46,619] [1294] [MainThread] [INFO] (lib.configs.segmentation_nuclei:72) - Using Preload: 0; ROI Size: [1024, 1024]
+[2022-07-12 16:29:46,619] [1294] [MainThread] [INFO] (main:122) - +++ Adding Inferer:: segmentation_nuclei => <lib.infers.segmentation_nuclei.SegmentationNuclei object at 0x7f8a9bd42430>
+[2022-07-12 16:29:46,619] [1294] [MainThread] [INFO] (main:136) - +++ Adding Trainer:: deepedit_nuclei => <lib.trainers.deepedit_nuclei.DeepEditNuclei object at 0x7f8a9bd42520>
+[2022-07-12 16:29:46,620] [1294] [MainThread] [INFO] (main:136) - +++ Adding Trainer:: nuclick => <lib.trainers.nuclick.NuClick object at 0x7f8a9bd42580>
+[2022-07-12 16:29:46,620] [1294] [MainThread] [INFO] (main:136) - +++ Adding Trainer:: segmentation_nuclei => <lib.trainers.segmentation_nuclei.SegmentationNuclei object at 0x7f8a9bd424f0>
+[2022-07-12 16:29:46,620] [1294] [MainThread] [INFO] (monailabel.utils.sessions:51) - Session Path: /root/.cache/monailabel/sessions
+[2022-07-12 16:29:46,620] [1294] [MainThread] [INFO] (monailabel.utils.sessions:52) - Session Expiry (max): 3600
+[2022-07-12 16:29:46,620] [1294] [MainThread] [INFO] (monailabel.interfaces.app:460) - App Init - completed
+[2022-07-12 16:29:46,620] [1294] [MainThread] [INFO] (timeloop:60) - Starting Timeloop..
+[2022-07-12 16:29:46,621] [1294] [MainThread] [INFO] (timeloop:42) - Registered job <function MONAILabelApp.on_init_complete.<locals>.run_scheduler at 0x7f8a9bd3d820>
+[2022-07-12 16:29:46,621] [1294] [MainThread] [INFO] (timeloop:63) - Timeloop now started. Jobs will run based on the interval set
+[2022-07-12 16:30:25,156] [1359] [MainThread] [INFO] (monailabel.interfaces.utils.app:38) - Initializing App from: /workshop/src/MONAI_Workshop_202205/MONAILabel_v0.4.dev2215/apps/pathology; studies: /workshop/src/MONAI_Workshop_202205/MONAILabel_v0.4.dev2215/sample_wsi; conf: {}
+[2022-07-12 16:30:25,157] [1359] [MainThread] [INFO] (monailabel.utils.others.class_utils:36) - Subclass for MONAILabelApp Found: <class 'main.MyApp'>
+[2022-07-12 16:30:25,171] [1359] [MainThread] [INFO] (monailabel.utils.others.class_utils:36) - Subclass for TaskConfig Found: <class 'lib.configs.segmentation_nuclei.SegmentationNuclei'>
+[2022-07-12 16:30:25,172] [1359] [MainThread] [INFO] (monailabel.utils.others.class_utils:36) - Subclass for TaskConfig Found: <class 'lib.configs.deepedit_nuclei.DeepEditNuclei'>
+[2022-07-12 16:30:25,172] [1359] [MainThread] [INFO] (monailabel.utils.others.class_utils:36) - Subclass for TaskConfig Found: <class 'lib.configs.nuclick.NuClick'>
+[2022-07-12 16:30:25,172] [1359] [MainThread] [INFO] (main:77) - +++ Adding Model: deepedit_nuclei => lib.configs.deepedit_nuclei.DeepEditNuclei
+[2022-07-12 16:30:25,289] [1359] [MainThread] [INFO] (main:77) - +++ Adding Model: nuclick => lib.configs.nuclick.NuClick
+[2022-07-12 16:30:25,386] [1359] [MainThread] [INFO] (main:77) - +++ Adding Model: segmentation_nuclei => lib.configs.segmentation_nuclei.SegmentationNuclei
+[2022-07-12 16:30:25,482] [1359] [MainThread] [INFO] (main:81) - +++ Using Models: ['deepedit_nuclei', 'nuclick', 'segmentation_nuclei']
+[2022-07-12 16:30:25,482] [1359] [MainThread] [INFO] (monailabel.interfaces.app:128) - Init Datastore for: /workshop/src/MONAI_Workshop_202205/MONAILabel_v0.4.dev2215/sample_wsi
+[2022-07-12 16:30:25,482] [1359] [MainThread] [INFO] (monailabel.datastore.local:125) - Auto Reload: True; Extensions: ['*.nii.gz', '*.nii', '*.nrrd', '*.jpg', '*.png', '*.tif', '*.svs', '*.xml']
+[2022-07-12 16:30:25,484] [1359] [MainThread] [INFO] (monailabel.datastore.local:540) - Invalidate count: 0
+[2022-07-12 16:30:25,484] [1359] [MainThread] [INFO] (monailabel.datastore.local:145) - Start observing external modifications on datastore (AUTO RELOAD)
+[2022-07-12 16:30:25,485] [1359] [MainThread] [INFO] (lib.configs.deepedit_nuclei:60) - Using Preload: 0; ROI Size: [1024, 1024]
+[2022-07-12 16:30:25,485] [1359] [MainThread] [INFO] (main:122) - +++ Adding Inferer:: deepedit_nuclei => <lib.infers.deepedit_nuclei.DeepEditNuclei object at 0x7fcf6d031a30>
+[2022-07-12 16:30:25,486] [1359] [MainThread] [INFO] (main:122) - +++ Adding Inferer:: nuclick => <lib.infers.nuclick.NuClick object at 0x7fcf6d2d5370>
+[2022-07-12 16:30:25,486] [1359] [MainThread] [INFO] (lib.configs.segmentation_nuclei:72) - Using Preload: 0; ROI Size: [1024, 1024]
+[2022-07-12 16:30:25,486] [1359] [MainThread] [INFO] (main:122) - +++ Adding Inferer:: segmentation_nuclei => <lib.infers.segmentation_nuclei.SegmentationNuclei object at 0x7fcf6cfe22e0>
+[2022-07-12 16:30:25,486] [1359] [MainThread] [INFO] (main:136) - +++ Adding Trainer:: deepedit_nuclei => <lib.trainers.deepedit_nuclei.DeepEditNuclei object at 0x7fcf6cfe23d0>
+[2022-07-12 16:30:25,486] [1359] [MainThread] [INFO] (main:136) - +++ Adding Trainer:: nuclick => <lib.trainers.nuclick.NuClick object at 0x7fcf6cfe2430>
+[2022-07-12 16:30:25,486] [1359] [MainThread] [INFO] (main:136) - +++ Adding Trainer:: segmentation_nuclei => <lib.trainers.segmentation_nuclei.SegmentationNuclei object at 0x7fcf6cfe23a0>
+[2022-07-12 16:30:25,486] [1359] [MainThread] [INFO] (monailabel.utils.sessions:51) - Session Path: /root/.cache/monailabel/sessions
+[2022-07-12 16:30:25,487] [1359] [MainThread] [INFO] (monailabel.utils.sessions:52) - Session Expiry (max): 3600
+[2022-07-12 16:30:25,487] [1359] [MainThread] [INFO] (monailabel.interfaces.app:460) - App Init - completed
+[2022-07-12 16:30:25,487] [1359] [MainThread] [INFO] (timeloop:60) - Starting Timeloop..
+[2022-07-12 16:30:25,487] [1359] [MainThread] [INFO] (timeloop:42) - Registered job <function MONAILabelApp.on_init_complete.<locals>.run_scheduler at 0x7fcf6cfdc820>
+[2022-07-12 16:30:25,487] [1359] [MainThread] [INFO] (timeloop:63) - Timeloop now started. Jobs will run based on the interval set
+[2022-07-12 16:31:19,508] [1424] [MainThread] [INFO] (monailabel.interfaces.utils.app:38) - Initializing App from: /workshop/src/MONAI_Workshop_202205/MONAILabel_v0.4.dev2215/apps/pathology; studies: /workshop/src/MONAI_Workshop_202205/MONAILabel_v0.4.dev2215/sample_wsi; conf: {}
+[2022-07-12 16:31:19,509] [1424] [MainThread] [INFO] (monailabel.utils.others.class_utils:36) - Subclass for MONAILabelApp Found: <class 'main.MyApp'>
+[2022-07-12 16:31:19,524] [1424] [MainThread] [INFO] (monailabel.utils.others.class_utils:36) - Subclass for TaskConfig Found: <class 'lib.configs.segmentation_nuclei.SegmentationNuclei'>
+[2022-07-12 16:31:19,524] [1424] [MainThread] [INFO] (monailabel.utils.others.class_utils:36) - Subclass for TaskConfig Found: <class 'lib.configs.deepedit_nuclei.DeepEditNuclei'>
+[2022-07-12 16:31:19,525] [1424] [MainThread] [INFO] (monailabel.utils.others.class_utils:36) - Subclass for TaskConfig Found: <class 'lib.configs.nuclick.NuClick'>
+[2022-07-12 16:31:19,525] [1424] [MainThread] [INFO] (main:77) - +++ Adding Model: deepedit_nuclei => lib.configs.deepedit_nuclei.DeepEditNuclei
+[2022-07-12 16:31:19,642] [1424] [MainThread] [INFO] (main:77) - +++ Adding Model: nuclick => lib.configs.nuclick.NuClick
+[2022-07-12 16:31:19,739] [1424] [MainThread] [INFO] (main:77) - +++ Adding Model: segmentation_nuclei => lib.configs.segmentation_nuclei.SegmentationNuclei
+[2022-07-12 16:31:19,836] [1424] [MainThread] [INFO] (main:81) - +++ Using Models: ['deepedit_nuclei', 'nuclick', 'segmentation_nuclei']
+[2022-07-12 16:31:19,836] [1424] [MainThread] [INFO] (monailabel.interfaces.app:128) - Init Datastore for: /workshop/src/MONAI_Workshop_202205/MONAILabel_v0.4.dev2215/sample_wsi
+[2022-07-12 16:31:19,836] [1424] [MainThread] [INFO] (monailabel.datastore.local:125) - Auto Reload: True; Extensions: ['*.nii.gz', '*.nii', '*.nrrd', '*.jpg', '*.png', '*.tif', '*.svs', '*.xml']
+[2022-07-12 16:31:19,838] [1424] [MainThread] [INFO] (monailabel.datastore.local:540) - Invalidate count: 0
+[2022-07-12 16:31:19,838] [1424] [MainThread] [INFO] (monailabel.datastore.local:145) - Start observing external modifications on datastore (AUTO RELOAD)
+[2022-07-12 16:31:19,839] [1424] [MainThread] [INFO] (lib.configs.deepedit_nuclei:60) - Using Preload: 0; ROI Size: [1024, 1024]
+[2022-07-12 16:31:19,840] [1424] [MainThread] [INFO] (main:122) - +++ Adding Inferer:: deepedit_nuclei => <lib.infers.deepedit_nuclei.DeepEditNuclei object at 0x7f47431b6b50>
+[2022-07-12 16:31:19,840] [1424] [MainThread] [INFO] (main:122) - +++ Adding Inferer:: nuclick => <lib.infers.nuclick.NuClick object at 0x7f474345f490>
+[2022-07-12 16:31:19,840] [1424] [MainThread] [INFO] (lib.configs.segmentation_nuclei:72) - Using Preload: 0; ROI Size: [1024, 1024]
+[2022-07-12 16:31:19,840] [1424] [MainThread] [INFO] (main:122) - +++ Adding Inferer:: segmentation_nuclei => <lib.infers.segmentation_nuclei.SegmentationNuclei object at 0x7f474316c400>
+[2022-07-12 16:31:19,840] [1424] [MainThread] [INFO] (main:136) - +++ Adding Trainer:: deepedit_nuclei => <lib.trainers.deepedit_nuclei.DeepEditNuclei object at 0x7f474316c4f0>
+[2022-07-12 16:31:19,840] [1424] [MainThread] [INFO] (main:136) - +++ Adding Trainer:: nuclick => <lib.trainers.nuclick.NuClick object at 0x7f474316c550>
+[2022-07-12 16:31:19,840] [1424] [MainThread] [INFO] (main:136) - +++ Adding Trainer:: segmentation_nuclei => <lib.trainers.segmentation_nuclei.SegmentationNuclei object at 0x7f474316c4c0>
+[2022-07-12 16:31:19,841] [1424] [MainThread] [INFO] (monailabel.utils.sessions:51) - Session Path: /root/.cache/monailabel/sessions
+[2022-07-12 16:31:19,841] [1424] [MainThread] [INFO] (monailabel.utils.sessions:52) - Session Expiry (max): 3600
+[2022-07-12 16:31:19,841] [1424] [MainThread] [INFO] (monailabel.interfaces.app:460) - App Init - completed
+[2022-07-12 16:31:19,841] [1424] [MainThread] [INFO] (timeloop:60) - Starting Timeloop..
+[2022-07-12 16:31:19,841] [1424] [MainThread] [INFO] (timeloop:42) - Registered job <function MONAILabelApp.on_init_complete.<locals>.run_scheduler at 0x7f4743167820>
+[2022-07-12 16:31:19,841] [1424] [MainThread] [INFO] (timeloop:63) - Timeloop now started. Jobs will run based on the interval set
+[2022-07-12 16:31:37,778] [1489] [MainThread] [INFO] (monailabel.interfaces.utils.app:38) - Initializing App from: /workshop/src/MONAI_Workshop_202205/MONAILabel_v0.4.dev2215/apps/pathology; studies: /workshop/src/MONAI_Workshop_202205/MONAILabel_v0.4.dev2215/sample_wsi; conf: {}
+[2022-07-12 16:31:37,779] [1489] [MainThread] [INFO] (monailabel.utils.others.class_utils:36) - Subclass for MONAILabelApp Found: <class 'main.MyApp'>
+[2022-07-12 16:31:37,794] [1489] [MainThread] [INFO] (monailabel.utils.others.class_utils:36) - Subclass for TaskConfig Found: <class 'lib.configs.segmentation_nuclei.SegmentationNuclei'>
+[2022-07-12 16:31:37,794] [1489] [MainThread] [INFO] (monailabel.utils.others.class_utils:36) - Subclass for TaskConfig Found: <class 'lib.configs.deepedit_nuclei.DeepEditNuclei'>
+[2022-07-12 16:31:37,794] [1489] [MainThread] [INFO] (monailabel.utils.others.class_utils:36) - Subclass for TaskConfig Found: <class 'lib.configs.nuclick.NuClick'>
+[2022-07-12 16:31:37,795] [1489] [MainThread] [INFO] (main:77) - +++ Adding Model: deepedit_nuclei => lib.configs.deepedit_nuclei.DeepEditNuclei
+[2022-07-12 16:31:37,916] [1489] [MainThread] [INFO] (main:77) - +++ Adding Model: nuclick => lib.configs.nuclick.NuClick
+[2022-07-12 16:31:38,014] [1489] [MainThread] [INFO] (main:77) - +++ Adding Model: segmentation_nuclei => lib.configs.segmentation_nuclei.SegmentationNuclei
+[2022-07-12 16:31:38,110] [1489] [MainThread] [INFO] (main:81) - +++ Using Models: ['deepedit_nuclei', 'nuclick', 'segmentation_nuclei']
+[2022-07-12 16:31:38,110] [1489] [MainThread] [INFO] (monailabel.interfaces.app:128) - Init Datastore for: /workshop/src/MONAI_Workshop_202205/MONAILabel_v0.4.dev2215/sample_wsi
+[2022-07-12 16:31:38,111] [1489] [MainThread] [INFO] (monailabel.datastore.local:125) - Auto Reload: True; Extensions: ['*.nii.gz', '*.nii', '*.nrrd', '*.jpg', '*.png', '*.tif', '*.svs', '*.xml']
+[2022-07-12 16:31:38,112] [1489] [MainThread] [INFO] (monailabel.datastore.local:540) - Invalidate count: 0
+[2022-07-12 16:31:38,113] [1489] [MainThread] [INFO] (monailabel.datastore.local:145) - Start observing external modifications on datastore (AUTO RELOAD)
+[2022-07-12 16:31:38,114] [1489] [MainThread] [INFO] (lib.configs.deepedit_nuclei:60) - Using Preload: 0; ROI Size: [1024, 1024]
+[2022-07-12 16:31:38,114] [1489] [MainThread] [INFO] (main:122) - +++ Adding Inferer:: deepedit_nuclei => <lib.infers.deepedit_nuclei.DeepEditNuclei object at 0x7f0cfa3d8c10>
+[2022-07-12 16:31:38,114] [1489] [MainThread] [INFO] (main:122) - +++ Adding Inferer:: nuclick => <lib.infers.nuclick.NuClick object at 0x7f0cfa604550>
+[2022-07-12 16:31:38,114] [1489] [MainThread] [INFO] (lib.configs.segmentation_nuclei:72) - Using Preload: 0; ROI Size: [1024, 1024]
+[2022-07-12 16:31:38,115] [1489] [MainThread] [INFO] (main:122) - +++ Adding Inferer:: segmentation_nuclei => <lib.infers.segmentation_nuclei.SegmentationNuclei object at 0x7f0cfa3134c0>
+[2022-07-12 16:31:38,115] [1489] [MainThread] [INFO] (main:136) - +++ Adding Trainer:: deepedit_nuclei => <lib.trainers.deepedit_nuclei.DeepEditNuclei object at 0x7f0cfa3135b0>
+[2022-07-12 16:31:38,115] [1489] [MainThread] [INFO] (main:136) - +++ Adding Trainer:: nuclick => <lib.trainers.nuclick.NuClick object at 0x7f0cfa313610>
+[2022-07-12 16:31:38,115] [1489] [MainThread] [INFO] (main:136) - +++ Adding Trainer:: segmentation_nuclei => <lib.trainers.segmentation_nuclei.SegmentationNuclei object at 0x7f0cfa313580>
+[2022-07-12 16:31:38,115] [1489] [MainThread] [INFO] (monailabel.utils.sessions:51) - Session Path: /root/.cache/monailabel/sessions
+[2022-07-12 16:31:38,115] [1489] [MainThread] [INFO] (monailabel.utils.sessions:52) - Session Expiry (max): 3600
+[2022-07-12 16:31:38,115] [1489] [MainThread] [INFO] (monailabel.interfaces.app:460) - App Init - completed
+[2022-07-12 16:31:38,116] [1489] [MainThread] [INFO] (timeloop:60) - Starting Timeloop..
+[2022-07-12 16:31:38,116] [1489] [MainThread] [INFO] (timeloop:42) - Registered job <function MONAILabelApp.on_init_complete.<locals>.run_scheduler at 0x7f0cfa30e820>
+[2022-07-12 16:31:38,116] [1489] [MainThread] [INFO] (timeloop:63) - Timeloop now started. Jobs will run based on the interval set
+[2022-07-12 16:32:05,455] [1554] [MainThread] [INFO] (monailabel.interfaces.utils.app:38) - Initializing App from: /workshop/src/MONAI_Workshop_202205/MONAILabel_v0.4.dev2215/apps/pathology; studies: /workshop/src/MONAI_Workshop_202205/MONAILabel_v0.4.dev2215/sample_wsi; conf: {}
+[2022-07-12 16:32:05,457] [1554] [MainThread] [INFO] (monailabel.utils.others.class_utils:36) - Subclass for MONAILabelApp Found: <class 'main.MyApp'>
+[2022-07-12 16:32:05,471] [1554] [MainThread] [INFO] (monailabel.utils.others.class_utils:36) - Subclass for TaskConfig Found: <class 'lib.configs.segmentation_nuclei.SegmentationNuclei'>
+[2022-07-12 16:32:05,472] [1554] [MainThread] [INFO] (monailabel.utils.others.class_utils:36) - Subclass for TaskConfig Found: <class 'lib.configs.deepedit_nuclei.DeepEditNuclei'>
+[2022-07-12 16:32:05,472] [1554] [MainThread] [INFO] (monailabel.utils.others.class_utils:36) - Subclass for TaskConfig Found: <class 'lib.configs.nuclick.NuClick'>
+[2022-07-12 16:32:05,472] [1554] [MainThread] [INFO] (main:77) - +++ Adding Model: deepedit_nuclei => lib.configs.deepedit_nuclei.DeepEditNuclei
+[2022-07-12 16:32:05,591] [1554] [MainThread] [INFO] (main:77) - +++ Adding Model: nuclick => lib.configs.nuclick.NuClick
+[2022-07-12 16:32:05,688] [1554] [MainThread] [INFO] (main:77) - +++ Adding Model: segmentation_nuclei => lib.configs.segmentation_nuclei.SegmentationNuclei
+[2022-07-12 16:32:05,785] [1554] [MainThread] [INFO] (main:81) - +++ Using Models: ['deepedit_nuclei', 'nuclick', 'segmentation_nuclei']
+[2022-07-12 16:32:05,785] [1554] [MainThread] [INFO] (monailabel.interfaces.app:128) - Init Datastore for: /workshop/src/MONAI_Workshop_202205/MONAILabel_v0.4.dev2215/sample_wsi
+[2022-07-12 16:32:05,785] [1554] [MainThread] [INFO] (monailabel.datastore.local:125) - Auto Reload: True; Extensions: ['*.nii.gz', '*.nii', '*.nrrd', '*.jpg', '*.png', '*.tif', '*.svs', '*.xml']
+[2022-07-12 16:32:05,787] [1554] [MainThread] [INFO] (monailabel.datastore.local:540) - Invalidate count: 0
+[2022-07-12 16:32:05,787] [1554] [MainThread] [INFO] (monailabel.datastore.local:145) - Start observing external modifications on datastore (AUTO RELOAD)
+[2022-07-12 16:32:05,788] [1554] [MainThread] [INFO] (lib.configs.deepedit_nuclei:60) - Using Preload: 0; ROI Size: [1024, 1024]
+[2022-07-12 16:32:05,789] [1554] [MainThread] [INFO] (main:122) - +++ Adding Inferer:: deepedit_nuclei => <lib.infers.deepedit_nuclei.DeepEditNuclei object at 0x7f2b8e6a0a00>
+[2022-07-12 16:32:05,789] [1554] [MainThread] [INFO] (main:122) - +++ Adding Inferer:: nuclick => <lib.infers.nuclick.NuClick object at 0x7f2b8e942340>
+[2022-07-12 16:32:05,789] [1554] [MainThread] [INFO] (lib.configs.segmentation_nuclei:72) - Using Preload: 0; ROI Size: [1024, 1024]
+[2022-07-12 16:32:05,789] [1554] [MainThread] [INFO] (main:122) - +++ Adding Inferer:: segmentation_nuclei => <lib.infers.segmentation_nuclei.SegmentationNuclei object at 0x7f2b8e6502b0>
+[2022-07-12 16:32:05,789] [1554] [MainThread] [INFO] (main:136) - +++ Adding Trainer:: deepedit_nuclei => <lib.trainers.deepedit_nuclei.DeepEditNuclei object at 0x7f2b8e6503a0>
+[2022-07-12 16:32:05,789] [1554] [MainThread] [INFO] (main:136) - +++ Adding Trainer:: nuclick => <lib.trainers.nuclick.NuClick object at 0x7f2b8e650400>
+[2022-07-12 16:32:05,789] [1554] [MainThread] [INFO] (main:136) - +++ Adding Trainer:: segmentation_nuclei => <lib.trainers.segmentation_nuclei.SegmentationNuclei object at 0x7f2b8e650370>
+[2022-07-12 16:32:05,789] [1554] [MainThread] [INFO] (monailabel.utils.sessions:51) - Session Path: /root/.cache/monailabel/sessions
+[2022-07-12 16:32:05,790] [1554] [MainThread] [INFO] (monailabel.utils.sessions:52) - Session Expiry (max): 3600
+[2022-07-12 16:32:05,790] [1554] [MainThread] [INFO] (monailabel.interfaces.app:460) - App Init - completed
+[2022-07-12 16:32:05,790] [1554] [MainThread] [INFO] (timeloop:60) - Starting Timeloop..
+[2022-07-12 16:32:05,790] [1554] [MainThread] [INFO] (timeloop:42) - Registered job <function MONAILabelApp.on_init_complete.<locals>.run_scheduler at 0x7f2b8e64a820>
+[2022-07-12 16:32:05,790] [1554] [MainThread] [INFO] (timeloop:63) - Timeloop now started. Jobs will run based on the interval set
+[2022-07-12 16:32:51,644] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.app:38) - Initializing App from: /workshop/src/MONAI_Workshop_202205/MONAILabel_v0.4.dev2215/apps/pathology; studies: /workshop/src/MONAI_Workshop_202205/MONAILabel_v0.4.dev2215/sample_wsi; conf: {}
+[2022-07-12 16:32:51,646] [1619] [MainThread] [INFO] (monailabel.utils.others.class_utils:36) - Subclass for MONAILabelApp Found: <class 'main.MyApp'>
+[2022-07-12 16:32:51,660] [1619] [MainThread] [INFO] (monailabel.utils.others.class_utils:36) - Subclass for TaskConfig Found: <class 'lib.configs.segmentation_nuclei.SegmentationNuclei'>
+[2022-07-12 16:32:51,661] [1619] [MainThread] [INFO] (monailabel.utils.others.class_utils:36) - Subclass for TaskConfig Found: <class 'lib.configs.deepedit_nuclei.DeepEditNuclei'>
+[2022-07-12 16:32:51,661] [1619] [MainThread] [INFO] (monailabel.utils.others.class_utils:36) - Subclass for TaskConfig Found: <class 'lib.configs.nuclick.NuClick'>
+[2022-07-12 16:32:51,661] [1619] [MainThread] [INFO] (main:77) - +++ Adding Model: deepedit_nuclei => lib.configs.deepedit_nuclei.DeepEditNuclei
+[2022-07-12 16:32:51,782] [1619] [MainThread] [INFO] (main:77) - +++ Adding Model: nuclick => lib.configs.nuclick.NuClick
+[2022-07-12 16:32:51,881] [1619] [MainThread] [INFO] (main:77) - +++ Adding Model: segmentation_nuclei => lib.configs.segmentation_nuclei.SegmentationNuclei
+[2022-07-12 16:32:51,979] [1619] [MainThread] [INFO] (main:81) - +++ Using Models: ['deepedit_nuclei', 'nuclick', 'segmentation_nuclei']
+[2022-07-12 16:32:51,979] [1619] [MainThread] [INFO] (monailabel.interfaces.app:128) - Init Datastore for: /workshop/src/MONAI_Workshop_202205/MONAILabel_v0.4.dev2215/sample_wsi
+[2022-07-12 16:32:51,979] [1619] [MainThread] [INFO] (monailabel.datastore.local:125) - Auto Reload: True; Extensions: ['*.nii.gz', '*.nii', '*.nrrd', '*.jpg', '*.png', '*.tif', '*.svs', '*.xml']
+[2022-07-12 16:32:51,981] [1619] [MainThread] [INFO] (monailabel.datastore.local:540) - Invalidate count: 0
+[2022-07-12 16:32:51,981] [1619] [MainThread] [INFO] (monailabel.datastore.local:145) - Start observing external modifications on datastore (AUTO RELOAD)
+[2022-07-12 16:32:51,982] [1619] [MainThread] [INFO] (lib.configs.deepedit_nuclei:60) - Using Preload: 0; ROI Size: [1024, 1024]
+[2022-07-12 16:32:51,982] [1619] [MainThread] [INFO] (main:122) - +++ Adding Inferer:: deepedit_nuclei => <lib.infers.deepedit_nuclei.DeepEditNuclei object at 0x7fdd2a9b9be0>
+[2022-07-12 16:32:51,983] [1619] [MainThread] [INFO] (main:122) - +++ Adding Inferer:: nuclick => <lib.infers.nuclick.NuClick object at 0x7fdd2abe7520>
+[2022-07-12 16:32:51,983] [1619] [MainThread] [INFO] (lib.configs.segmentation_nuclei:72) - Using Preload: 0; ROI Size: [1024, 1024]
+[2022-07-12 16:32:51,983] [1619] [MainThread] [INFO] (main:122) - +++ Adding Inferer:: segmentation_nuclei => <lib.infers.segmentation_nuclei.SegmentationNuclei object at 0x7fdd2a8f5490>
+[2022-07-12 16:32:51,983] [1619] [MainThread] [INFO] (main:136) - +++ Adding Trainer:: deepedit_nuclei => <lib.trainers.deepedit_nuclei.DeepEditNuclei object at 0x7fdd2a8f5580>
+[2022-07-12 16:32:51,983] [1619] [MainThread] [INFO] (main:136) - +++ Adding Trainer:: nuclick => <lib.trainers.nuclick.NuClick object at 0x7fdd2a8f55e0>
+[2022-07-12 16:32:51,983] [1619] [MainThread] [INFO] (main:136) - +++ Adding Trainer:: segmentation_nuclei => <lib.trainers.segmentation_nuclei.SegmentationNuclei object at 0x7fdd2a8f5550>
+[2022-07-12 16:32:51,983] [1619] [MainThread] [INFO] (monailabel.utils.sessions:51) - Session Path: /root/.cache/monailabel/sessions
+[2022-07-12 16:32:51,983] [1619] [MainThread] [INFO] (monailabel.utils.sessions:52) - Session Expiry (max): 3600
+[2022-07-12 16:32:51,984] [1619] [MainThread] [INFO] (monailabel.interfaces.app:460) - App Init - completed
+[2022-07-12 16:32:51,984] [1619] [MainThread] [INFO] (timeloop:60) - Starting Timeloop..
+[2022-07-12 16:32:51,984] [1619] [MainThread] [INFO] (timeloop:42) - Registered job <function MONAILabelApp.on_init_complete.<locals>.run_scheduler at 0x7fdd2a8ef820>
+[2022-07-12 16:32:51,984] [1619] [MainThread] [INFO] (timeloop:63) - Timeloop now started. Jobs will run based on the interval set
+[2022-07-12 16:34:14,752] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:24) - **************************** DATA ********************************************
+[2022-07-12 16:34:14,752] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: label_colors = {'Neoplastic cells': (255, 0, 0), 'Inflammatory': (255, 255, 0), 'Connective/Soft tissue cells': (0, 255, 0), 'Dead Cells': (0, 0, 0), 'Epithelial': (0, 0, 255)}
+[2022-07-12 16:34:14,752] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: max_workers = 20
+[2022-07-12 16:34:14,753] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: model = segmentation_nuclei
+[2022-07-12 16:34:14,753] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: image = <class 'NoneType'>
+[2022-07-12 16:34:14,753] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: output = asap
+[2022-07-12 16:34:14,753] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: level = 0
+[2022-07-12 16:34:14,753] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: location = [4487, 5892]
+[2022-07-12 16:34:14,754] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: size = [19666, 12970]
+[2022-07-12 16:34:14,754] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: tile_size = [2048, 2048]
+[2022-07-12 16:34:14,754] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: min_poly_area = 30
+[2022-07-12 16:34:14,754] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: foreground = []
+[2022-07-12 16:34:14,754] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: background = []
+[2022-07-12 16:34:14,755] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: description = A pre-trained semantic segmentation model for Pathology
+[2022-07-12 16:34:14,755] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: save_label = False
+[2022-07-12 16:34:14,755] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: device = cuda
+[2022-07-12 16:34:14,755] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:38) - ******************************************************************************
+[2022-07-12 16:34:14,756] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:63) - PRE - Run Transform(s)
+[2022-07-12 16:34:14,756] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:64) - PRE - Input Keys: ['label_colors', 'max_workers', 'model', 'image', 'output', 'level', 'location', 'size', 'tile_size', 'min_poly_area', 'foreground', 'background', 'description', 'save_label', 'device']
+[2022-07-12 16:34:14,757] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:108) - PRE - Transform (LoadImagePatchd): Time: 0.0; 
+[2022-07-12 16:34:14,758] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:108) - PRE - Transform (EnsureTyped): Time: 0.0001; 
+[2022-07-12 16:36:32,424] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:24) - **************************** DATA ********************************************
+[2022-07-12 16:36:32,424] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: label_colors = {'Nuclei': (0, 255, 255)}
+[2022-07-12 16:36:32,425] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: max_workers = 20
+[2022-07-12 16:36:32,425] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: model = deepedit_nuclei
+[2022-07-12 16:36:32,425] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: image = <class 'NoneType'>
+[2022-07-12 16:36:32,425] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: output = asap
+[2022-07-12 16:36:32,425] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: level = 0
+[2022-07-12 16:36:32,426] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: location = [0, 6991]
+[2022-07-12 16:36:32,426] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: size = [19666, 12970]
+[2022-07-12 16:36:32,426] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: tile_size = [2048, 2048]
+[2022-07-12 16:36:32,426] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: min_poly_area = 30
+[2022-07-12 16:36:32,426] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: foreground = []
+[2022-07-12 16:36:32,426] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: background = []
+[2022-07-12 16:36:32,427] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: description = A pre-trained interaction/deepedit model for Pathology
+[2022-07-12 16:36:32,427] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: save_label = False
+[2022-07-12 16:36:32,427] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: device = cuda
+[2022-07-12 16:36:32,427] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:38) - ******************************************************************************
+[2022-07-12 16:36:32,428] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:63) - PRE - Run Transform(s)
+[2022-07-12 16:36:32,428] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:64) - PRE - Input Keys: ['label_colors', 'max_workers', 'model', 'image', 'output', 'level', 'location', 'size', 'tile_size', 'min_poly_area', 'foreground', 'background', 'description', 'save_label', 'device']
+[2022-07-12 16:36:32,429] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:108) - PRE - Transform (LoadImagePatchd): Time: 0.0; 
+[2022-07-12 16:36:32,430] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:108) - PRE - Transform (EnsureTyped): Time: 0.0001; 
+[2022-07-12 16:38:04,410] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:24) - **************************** DATA ********************************************
+[2022-07-12 16:38:04,410] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: label_colors = {'Neoplastic cells': (255, 0, 0), 'Inflammatory': (255, 255, 0), 'Connective/Soft tissue cells': (0, 255, 0), 'Dead Cells': (0, 0, 0), 'Epithelial': (0, 0, 255)}
+[2022-07-12 16:38:04,411] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: max_workers = 20
+[2022-07-12 16:38:04,411] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: model = segmentation_nuclei
+[2022-07-12 16:38:04,411] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: image = <class 'NoneType'>
+[2022-07-12 16:38:04,411] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: output = asap
+[2022-07-12 16:38:04,411] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: level = 0
+[2022-07-12 16:38:04,412] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: location = [0, 6991]
+[2022-07-12 16:38:04,412] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: size = [19666, 12970]
+[2022-07-12 16:38:04,412] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: tile_size = [2048, 2048]
+[2022-07-12 16:38:04,412] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: min_poly_area = 30
+[2022-07-12 16:38:04,412] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: foreground = []
+[2022-07-12 16:38:04,413] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: background = []
+[2022-07-12 16:38:04,413] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: description = A pre-trained semantic segmentation model for Pathology
+[2022-07-12 16:38:04,413] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: save_label = False
+[2022-07-12 16:38:04,413] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: device = cuda
+[2022-07-12 16:38:04,413] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:38) - ******************************************************************************
+[2022-07-12 16:38:04,414] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:63) - PRE - Run Transform(s)
+[2022-07-12 16:38:04,414] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:64) - PRE - Input Keys: ['label_colors', 'max_workers', 'model', 'image', 'output', 'level', 'location', 'size', 'tile_size', 'min_poly_area', 'foreground', 'background', 'description', 'save_label', 'device']
+[2022-07-12 16:38:04,415] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:108) - PRE - Transform (LoadImagePatchd): Time: 0.0; 
+[2022-07-12 16:38:04,416] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:108) - PRE - Transform (EnsureTyped): Time: 0.0001; 
+[2022-07-12 16:39:00,849] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:24) - **************************** DATA ********************************************
+[2022-07-12 16:39:00,849] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: label_colors = {'Neoplastic cells': (255, 0, 0), 'Inflammatory': (255, 255, 0), 'Connective/Soft tissue cells': (0, 255, 0), 'Dead Cells': (0, 0, 0), 'Epithelial': (0, 0, 255)}
+[2022-07-12 16:39:00,850] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: max_workers = 20
+[2022-07-12 16:39:00,850] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: model = segmentation_nuclei
+[2022-07-12 16:39:00,850] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: image = <class 'NoneType'>
+[2022-07-12 16:39:00,850] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: output = asap
+[2022-07-12 16:39:00,851] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: level = 0
+[2022-07-12 16:39:00,851] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: location = [0, 6991]
+[2022-07-12 16:39:00,851] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: size = [19666, 12970]
+[2022-07-12 16:39:00,851] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: tile_size = [2048, 2048]
+[2022-07-12 16:39:00,851] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: min_poly_area = 30
+[2022-07-12 16:39:00,852] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: foreground = []
+[2022-07-12 16:39:00,852] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: background = []
+[2022-07-12 16:39:00,852] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: description = A pre-trained semantic segmentation model for Pathology
+[2022-07-12 16:39:00,852] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: save_label = False
+[2022-07-12 16:39:00,852] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: device = cuda
+[2022-07-12 16:39:00,852] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:38) - ******************************************************************************
+[2022-07-12 16:39:00,853] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:63) - PRE - Run Transform(s)
+[2022-07-12 16:39:00,853] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:64) - PRE - Input Keys: ['label_colors', 'max_workers', 'model', 'image', 'output', 'level', 'location', 'size', 'tile_size', 'min_poly_area', 'foreground', 'background', 'description', 'save_label', 'device']
+[2022-07-12 16:39:00,854] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:108) - PRE - Transform (LoadImagePatchd): Time: 0.0; 
+[2022-07-12 16:39:00,855] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:108) - PRE - Transform (EnsureTyped): Time: 0.0001; 
+[2022-07-12 16:48:37,472] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:24) - **************************** DATA ********************************************
+[2022-07-12 16:48:37,473] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: label_colors = {'Neoplastic cells': (255, 0, 0), 'Inflammatory': (255, 255, 0), 'Connective/Soft tissue cells': (0, 255, 0), 'Dead Cells': (0, 0, 0), 'Epithelial': (0, 0, 255)}
+[2022-07-12 16:48:37,473] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: max_workers = 20
+[2022-07-12 16:48:37,473] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: model = segmentation_nuclei
+[2022-07-12 16:48:37,473] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: image = <class 'NoneType'>
+[2022-07-12 16:48:37,474] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: output = asap
+[2022-07-12 16:48:37,474] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: level = 0
+[2022-07-12 16:48:37,474] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: location = [11549, 18619]
+[2022-07-12 16:48:37,474] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: size = [1474, 924]
+[2022-07-12 16:48:37,474] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: tile_size = [2048, 2048]
+[2022-07-12 16:48:37,475] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: min_poly_area = 30
+[2022-07-12 16:48:37,475] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: foreground = []
+[2022-07-12 16:48:37,475] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: background = []
+[2022-07-12 16:48:37,475] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: description = A pre-trained semantic segmentation model for Pathology
+[2022-07-12 16:48:37,475] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: save_label = False
+[2022-07-12 16:48:37,476] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: device = cuda
+[2022-07-12 16:48:37,476] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:38) - ******************************************************************************
+[2022-07-12 16:48:37,476] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:63) - PRE - Run Transform(s)
+[2022-07-12 16:48:37,477] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:64) - PRE - Input Keys: ['label_colors', 'max_workers', 'model', 'image', 'output', 'level', 'location', 'size', 'tile_size', 'min_poly_area', 'foreground', 'background', 'description', 'save_label', 'device']
+[2022-07-12 16:48:37,478] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:108) - PRE - Transform (LoadImagePatchd): Time: 0.0; 
+[2022-07-12 16:48:37,478] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:108) - PRE - Transform (EnsureTyped): Time: 0.0001; 
+[2022-07-12 16:48:57,457] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:24) - **************************** DATA ********************************************
+[2022-07-12 16:48:57,457] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: label_colors = {'Nuclei': (0, 255, 255)}
+[2022-07-12 16:48:57,458] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: max_workers = 20
+[2022-07-12 16:48:57,458] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: model = deepedit_nuclei
+[2022-07-12 16:48:57,458] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: image = <class 'NoneType'>
+[2022-07-12 16:48:57,458] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: output = asap
+[2022-07-12 16:48:57,458] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: level = 0
+[2022-07-12 16:48:57,459] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: location = [11549, 18619]
+[2022-07-12 16:48:57,459] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: size = [1474, 924]
+[2022-07-12 16:48:57,459] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: tile_size = [2048, 2048]
+[2022-07-12 16:48:57,459] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: min_poly_area = 30
+[2022-07-12 16:48:57,459] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: foreground = []
+[2022-07-12 16:48:57,460] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: background = []
+[2022-07-12 16:48:57,460] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: description = A pre-trained interaction/deepedit model for Pathology
+[2022-07-12 16:48:57,460] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: save_label = False
+[2022-07-12 16:48:57,460] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: device = cuda
+[2022-07-12 16:48:57,460] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:38) - ******************************************************************************
+[2022-07-12 16:48:57,461] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:63) - PRE - Run Transform(s)
+[2022-07-12 16:48:57,461] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:64) - PRE - Input Keys: ['label_colors', 'max_workers', 'model', 'image', 'output', 'level', 'location', 'size', 'tile_size', 'min_poly_area', 'foreground', 'background', 'description', 'save_label', 'device']
+[2022-07-12 16:48:57,462] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:108) - PRE - Transform (LoadImagePatchd): Time: 0.0; 
+[2022-07-12 16:48:57,463] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:108) - PRE - Transform (EnsureTyped): Time: 0.0001; 
+[2022-07-12 16:49:05,763] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:24) - **************************** DATA ********************************************
+[2022-07-12 16:49:05,763] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: model = nuclick
+[2022-07-12 16:49:05,763] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: image = <class 'NoneType'>
+[2022-07-12 16:49:05,763] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: output = asap
+[2022-07-12 16:49:05,763] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: level = 0
+[2022-07-12 16:49:05,764] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: location = [11549, 18619]
+[2022-07-12 16:49:05,764] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: size = [1474, 924]
+[2022-07-12 16:49:05,764] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: tile_size = [2048, 2048]
+[2022-07-12 16:49:05,764] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: min_poly_area = 30
+[2022-07-12 16:49:05,764] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: foreground = []
+[2022-07-12 16:49:05,765] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: background = []
+[2022-07-12 16:49:05,765] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: description = A pre-trained NuClick model for interactive cell segmentation for Pathology
+[2022-07-12 16:49:05,765] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: save_label = False
+[2022-07-12 16:49:05,765] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: device = cuda
+[2022-07-12 16:49:05,765] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:38) - ******************************************************************************
+[2022-07-12 16:49:05,766] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:63) - PRE - Run Transform(s)
+[2022-07-12 16:49:05,766] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:64) - PRE - Input Keys: ['model', 'image', 'output', 'level', 'location', 'size', 'tile_size', 'min_poly_area', 'foreground', 'background', 'description', 'save_label', 'device']
+[2022-07-12 16:49:05,767] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:108) - PRE - Transform (LoadImagePatchd): Time: 0.0; 
+[2022-07-12 16:50:03,195] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:24) - **************************** DATA ********************************************
+[2022-07-12 16:50:03,196] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: model = nuclick
+[2022-07-12 16:50:03,196] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: image = <class 'NoneType'>
+[2022-07-12 16:50:03,196] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: output = asap
+[2022-07-12 16:50:03,196] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: level = 0
+[2022-07-12 16:50:03,196] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: location = [11549, 18619]
+[2022-07-12 16:50:03,197] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: size = [1474, 924]
+[2022-07-12 16:50:03,197] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: tile_size = [2048, 2048]
+[2022-07-12 16:50:03,197] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: min_poly_area = 30
+[2022-07-12 16:50:03,197] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: foreground = []
+[2022-07-12 16:50:03,197] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: background = []
+[2022-07-12 16:50:03,198] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: description = A pre-trained NuClick model for interactive cell segmentation for Pathology
+[2022-07-12 16:50:03,198] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: save_label = False
+[2022-07-12 16:50:03,198] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: device = cuda
+[2022-07-12 16:50:03,198] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:38) - ******************************************************************************
+[2022-07-12 16:50:03,199] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:63) - PRE - Run Transform(s)
+[2022-07-12 16:50:03,199] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:64) - PRE - Input Keys: ['model', 'image', 'output', 'level', 'location', 'size', 'tile_size', 'min_poly_area', 'foreground', 'background', 'description', 'save_label', 'device']
+[2022-07-12 16:50:03,200] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:108) - PRE - Transform (LoadImagePatchd): Time: 0.0; 
+[2022-07-12 16:50:19,923] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:24) - **************************** DATA ********************************************
+[2022-07-12 16:50:19,923] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: model = nuclick
+[2022-07-12 16:50:19,923] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: image = <class 'NoneType'>
+[2022-07-12 16:50:19,924] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: output = asap
+[2022-07-12 16:50:19,924] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: level = 0
+[2022-07-12 16:50:19,924] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: location = [11549, 18619]
+[2022-07-12 16:50:19,924] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: size = [1474, 924]
+[2022-07-12 16:50:19,924] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: tile_size = [2048, 2048]
+[2022-07-12 16:50:19,925] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: min_poly_area = 30
+[2022-07-12 16:50:19,925] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: foreground = []
+[2022-07-12 16:50:19,925] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: background = []
+[2022-07-12 16:50:19,925] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: description = A pre-trained NuClick model for interactive cell segmentation for Pathology
+[2022-07-12 16:50:19,925] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: save_label = False
+[2022-07-12 16:50:19,925] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: device = cuda
+[2022-07-12 16:50:19,926] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:38) - ******************************************************************************
+[2022-07-12 16:50:19,926] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:63) - PRE - Run Transform(s)
+[2022-07-12 16:50:19,926] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:64) - PRE - Input Keys: ['model', 'image', 'output', 'level', 'location', 'size', 'tile_size', 'min_poly_area', 'foreground', 'background', 'description', 'save_label', 'device']
+[2022-07-12 16:50:19,928] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:108) - PRE - Transform (LoadImagePatchd): Time: 0.0; 
+[2022-07-12 16:50:53,530] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:24) - **************************** DATA ********************************************
+[2022-07-12 16:50:53,530] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: label_colors = {'Neoplastic cells': (255, 0, 0), 'Inflammatory': (255, 255, 0), 'Connective/Soft tissue cells': (0, 255, 0), 'Dead Cells': (0, 0, 0), 'Epithelial': (0, 0, 255)}
+[2022-07-12 16:50:53,530] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: max_workers = 20
+[2022-07-12 16:50:53,531] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: model = segmentation_nuclei
+[2022-07-12 16:50:53,531] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: image = <class 'NoneType'>
+[2022-07-12 16:50:53,531] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: output = asap
+[2022-07-12 16:50:53,531] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: level = 0
+[2022-07-12 16:50:53,531] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: location = [11127, 19530]
+[2022-07-12 16:50:53,532] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: size = [1474, 924]
+[2022-07-12 16:50:53,532] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: tile_size = [2048, 2048]
+[2022-07-12 16:50:53,532] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: min_poly_area = 30
+[2022-07-12 16:50:53,532] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: foreground = []
+[2022-07-12 16:50:53,532] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: background = []
+[2022-07-12 16:50:53,533] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: description = A pre-trained semantic segmentation model for Pathology
+[2022-07-12 16:50:53,533] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: save_label = False
+[2022-07-12 16:50:53,533] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: device = cuda
+[2022-07-12 16:50:53,533] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:38) - ******************************************************************************
+[2022-07-12 16:50:53,534] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:63) - PRE - Run Transform(s)
+[2022-07-12 16:50:53,534] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:64) - PRE - Input Keys: ['label_colors', 'max_workers', 'model', 'image', 'output', 'level', 'location', 'size', 'tile_size', 'min_poly_area', 'foreground', 'background', 'description', 'save_label', 'device']
+[2022-07-12 16:50:53,535] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:108) - PRE - Transform (LoadImagePatchd): Time: 0.0; 
+[2022-07-12 16:50:53,535] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:108) - PRE - Transform (EnsureTyped): Time: 0.0001; 
+[2022-07-12 16:52:03,548] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:24) - **************************** DATA ********************************************
+[2022-07-12 16:52:03,548] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: label_colors = {'Neoplastic cells': (255, 0, 0), 'Inflammatory': (255, 255, 0), 'Connective/Soft tissue cells': (0, 255, 0), 'Dead Cells': (0, 0, 0), 'Epithelial': (0, 0, 255)}
+[2022-07-12 16:52:03,548] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: max_workers = 20
+[2022-07-12 16:52:03,549] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: model = segmentation_nuclei
+[2022-07-12 16:52:03,549] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: image = <class 'NoneType'>
+[2022-07-12 16:52:03,549] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: output = asap
+[2022-07-12 16:52:03,549] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: level = 0
+[2022-07-12 16:52:03,549] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: location = [11127, 19530]
+[2022-07-12 16:52:03,550] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: size = [1474, 924]
+[2022-07-12 16:52:03,550] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: tile_size = [2048, 2048]
+[2022-07-12 16:52:03,550] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: min_poly_area = 30
+[2022-07-12 16:52:03,550] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: foreground = []
+[2022-07-12 16:52:03,550] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: background = []
+[2022-07-12 16:52:03,551] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: description = A pre-trained semantic segmentation model for Pathology
+[2022-07-12 16:52:03,551] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: save_label = False
+[2022-07-12 16:52:03,551] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: device = cuda
+[2022-07-12 16:52:03,551] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:38) - ******************************************************************************
+[2022-07-12 16:52:03,552] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:63) - PRE - Run Transform(s)
+[2022-07-12 16:52:03,552] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:64) - PRE - Input Keys: ['label_colors', 'max_workers', 'model', 'image', 'output', 'level', 'location', 'size', 'tile_size', 'min_poly_area', 'foreground', 'background', 'description', 'save_label', 'device']
+[2022-07-12 16:52:03,553] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:108) - PRE - Transform (LoadImagePatchd): Time: 0.0; 
+[2022-07-12 16:52:03,553] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:108) - PRE - Transform (EnsureTyped): Time: 0.0001; 
+[2022-07-12 16:53:46,035] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:24) - **************************** DATA ********************************************
+[2022-07-12 16:53:46,035] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: label_colors = {'Nuclei': (0, 255, 255)}
+[2022-07-12 16:53:46,036] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: max_workers = 20
+[2022-07-12 16:53:46,036] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: model = deepedit_nuclei
+[2022-07-12 16:53:46,036] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: image = <class 'NoneType'>
+[2022-07-12 16:53:46,036] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: output = asap
+[2022-07-12 16:53:46,036] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: level = 0
+[2022-07-12 16:53:46,037] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: location = [5088, 14640]
+[2022-07-12 16:53:46,037] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: size = [1739, 1074]
+[2022-07-12 16:53:46,037] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: tile_size = [2048, 2048]
+[2022-07-12 16:53:46,037] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: min_poly_area = 30
+[2022-07-12 16:53:46,037] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: foreground = []
+[2022-07-12 16:53:46,038] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: background = []
+[2022-07-12 16:53:46,038] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: description = A pre-trained interaction/deepedit model for Pathology
+[2022-07-12 16:53:46,038] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: save_label = False
+[2022-07-12 16:53:46,038] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: device = cuda
+[2022-07-12 16:53:46,038] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:38) - ******************************************************************************
+[2022-07-12 16:53:46,039] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:63) - PRE - Run Transform(s)
+[2022-07-12 16:53:46,039] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:64) - PRE - Input Keys: ['label_colors', 'max_workers', 'model', 'image', 'output', 'level', 'location', 'size', 'tile_size', 'min_poly_area', 'foreground', 'background', 'description', 'save_label', 'device']
+[2022-07-12 16:53:46,040] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:108) - PRE - Transform (LoadImagePatchd): Time: 0.0; 
+[2022-07-12 16:53:46,041] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:108) - PRE - Transform (EnsureTyped): Time: 0.0001; 
+[2022-07-13 01:15:15,688] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:24) - **************************** DATA ********************************************
+[2022-07-13 01:15:15,689] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: label_colors = {'Nuclei': (0, 255, 255)}
+[2022-07-13 01:15:15,689] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: max_workers = 20
+[2022-07-13 01:15:15,689] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: model = deepedit_nuclei
+[2022-07-13 01:15:15,689] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: image = <class 'NoneType'>
+[2022-07-13 01:15:15,690] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: output = asap
+[2022-07-13 01:15:15,690] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: level = 0
+[2022-07-13 01:15:15,690] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: location = [5088, 14640]
+[2022-07-13 01:15:15,690] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: size = [1739, 1074]
+[2022-07-13 01:15:15,690] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: tile_size = [2048, 2048]
+[2022-07-13 01:15:15,691] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: min_poly_area = 30
+[2022-07-13 01:15:15,691] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: foreground = []
+[2022-07-13 01:15:15,691] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: background = []
+[2022-07-13 01:15:15,691] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: description = A pre-trained interaction/deepedit model for Pathology
+[2022-07-13 01:15:15,691] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: save_label = False
+[2022-07-13 01:15:15,691] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: device = cuda
+[2022-07-13 01:15:15,692] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:38) - ******************************************************************************
+[2022-07-13 01:15:15,692] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:63) - PRE - Run Transform(s)
+[2022-07-13 01:15:15,692] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:64) - PRE - Input Keys: ['label_colors', 'max_workers', 'model', 'image', 'output', 'level', 'location', 'size', 'tile_size', 'min_poly_area', 'foreground', 'background', 'description', 'save_label', 'device']
+[2022-07-13 01:15:15,694] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:108) - PRE - Transform (LoadImagePatchd): Time: 0.0; 
+[2022-07-13 01:15:15,694] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:108) - PRE - Transform (EnsureTyped): Time: 0.0001; 
+[2022-07-13 02:54:58,975] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:24) - **************************** DATA ********************************************
+[2022-07-13 02:54:58,975] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: label_colors = {'Nuclei': (0, 255, 255)}
+[2022-07-13 02:54:58,976] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: max_workers = 20
+[2022-07-13 02:54:58,976] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: model = deepedit_nuclei
+[2022-07-13 02:54:58,976] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: image = <class 'NoneType'>
+[2022-07-13 02:54:58,976] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: output = asap
+[2022-07-13 02:54:58,976] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: level = 0
+[2022-07-13 02:54:58,977] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: location = [5088, 14640]
+[2022-07-13 02:54:58,977] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: size = [1739, 1074]
+[2022-07-13 02:54:58,977] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: tile_size = [2048, 2048]
+[2022-07-13 02:54:58,977] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: min_poly_area = 30
+[2022-07-13 02:54:58,977] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: foreground = []
+[2022-07-13 02:54:58,978] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: background = []
+[2022-07-13 02:54:58,978] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: description = A pre-trained interaction/deepedit model for Pathology
+[2022-07-13 02:54:58,978] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: save_label = False
+[2022-07-13 02:54:58,978] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: device = cuda
+[2022-07-13 02:54:58,978] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:38) - ******************************************************************************
+[2022-07-13 02:54:58,979] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:63) - PRE - Run Transform(s)
+[2022-07-13 02:54:58,979] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:64) - PRE - Input Keys: ['label_colors', 'max_workers', 'model', 'image', 'output', 'level', 'location', 'size', 'tile_size', 'min_poly_area', 'foreground', 'background', 'description', 'save_label', 'device']
+[2022-07-13 02:54:58,980] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:108) - PRE - Transform (LoadImagePatchd): Time: 0.0; 
+[2022-07-13 02:54:58,981] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:108) - PRE - Transform (EnsureTyped): Time: 0.0001; 
+[2022-07-13 02:56:56,566] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:24) - **************************** DATA ********************************************
+[2022-07-13 02:56:56,567] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: label_colors = {'Neoplastic cells': (255, 0, 0), 'Inflammatory': (255, 255, 0), 'Connective/Soft tissue cells': (0, 255, 0), 'Dead Cells': (0, 0, 0), 'Epithelial': (0, 0, 255)}
+[2022-07-13 02:56:56,567] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: max_workers = 20
+[2022-07-13 02:56:56,567] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: model = segmentation_nuclei
+[2022-07-13 02:56:56,567] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: image = <class 'NoneType'>
+[2022-07-13 02:56:56,568] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: output = asap
+[2022-07-13 02:56:56,568] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: level = 0
+[2022-07-13 02:56:56,568] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: location = [8692, 13559]
+[2022-07-13 02:56:56,568] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: size = [3675, 2633]
+[2022-07-13 02:56:56,568] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: tile_size = [2048, 2048]
+[2022-07-13 02:56:56,569] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: min_poly_area = 30
+[2022-07-13 02:56:56,569] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: foreground = []
+[2022-07-13 02:56:56,569] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: background = []
+[2022-07-13 02:56:56,569] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: description = A pre-trained semantic segmentation model for Pathology
+[2022-07-13 02:56:56,569] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: save_label = False
+[2022-07-13 02:56:56,569] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:27) - Data key: device = cuda
+[2022-07-13 02:56:56,570] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:38) - ******************************************************************************
+[2022-07-13 02:56:56,570] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:63) - PRE - Run Transform(s)
+[2022-07-13 02:56:56,570] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:64) - PRE - Input Keys: ['label_colors', 'max_workers', 'model', 'image', 'output', 'level', 'location', 'size', 'tile_size', 'min_poly_area', 'foreground', 'background', 'description', 'save_label', 'device']
+[2022-07-13 02:56:56,571] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:108) - PRE - Transform (LoadImagePatchd): Time: 0.0; 
+[2022-07-13 02:56:56,572] [1619] [MainThread] [INFO] (monailabel.interfaces.utils.transform:108) - PRE - Transform (EnsureTyped): Time: 0.0001; 
+[2022-08-10 01:25:56,556] [1352] [MainThread] [INFO] (monailabel.interfaces.utils.app:38) - Initializing App from: /workshop/src/MONAILabel_v0.4.dev2215/apps/pathology; studies: /workshop/src/MONAILabel_v0.4.dev2215/sample_wsi; conf: {}
+[2022-08-10 01:25:56,558] [1352] [MainThread] [INFO] (monailabel.utils.others.class_utils:36) - Subclass for MONAILabelApp Found: <class 'main.MyApp'>
